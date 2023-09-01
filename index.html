@@ -17,7 +17,7 @@
   <header>
     <nav class="flex justify-around pt-12 flex-col md:flex-row gap-7 md:gap-28 lg:gap-[437px]">
       <img src="./images/Logo.png" alt="">
-      <button class="font-medium text-lg text-[#252525] bg-[#25252533] py-[10px] px-5 rounded">Sort by view</button>
+      <button onclick="sortingData()" class="font-medium text-lg text-[#252525] bg-[#25252533] py-[10px] px-5 rounded">Sort by view</button>
       <a class=" py-[10px] px-5 bg-[#FF1F3D] rounded text-center" href="./blog/index.html" target="_blank"><button class="font-medium text-lg text-white">Blog</button></a>
     </nav>
     <div class="py-8 px-5 tex-[#25252533]">
@@ -28,7 +28,7 @@
 
   <!-- main section starts here -->
   <main>
-    <section>
+    <section id="section">
       <!-- tab container starts here -->
      <div class="tab-conteiner w-full">
        <div class="tabs flex justify-center gap-5 text-center" id="tab-container">

@@ -68,7 +68,7 @@ const allCategoryItem = async (categoryId) => {
           ? ' <img src="../images/verified.png" alt="" />'
           : " "
       }</span></p>
-          <p class="text-[#252525B2] text-sm">${categoryItem.others?.views}</p> 
+          <p class="text-[#252525B2] text-sm">${categoryItem.others?.views} views</p> 
           </div> 
         </div>
       </div>
@@ -153,7 +153,7 @@ const allCategorySortItem = async (categoryId) => {
           ? ' <img src="../images/verified.png" alt="" />'
           : " "
       }</span></p>
-          <p class="text-[#252525B2] text-sm">${categoryItem.others?.views}</p> 
+          <p class="text-[#252525B2] text-sm">${categoryItem.others?.views} views</p> 
           </div> 
         </div>
       </div>

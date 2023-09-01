@@ -33,16 +33,26 @@ const allCategoryItem = async (categoryId) => {
       </div>
     `;
   } else {
-    emptyTab.innerHTML = '';
+    emptyTab.innerHTML = "";
     categoryItems.forEach((categoryItem) => {
       const div = document.createElement("div");
+      const getHour = Math.ceil(categoryItem.others.posted_date / 3600);
+      const getSecond = getHour * 3600 - categoryItem.others.posted_date;
+      const getMinute = Math.ceil(getSecond / 60);
+      const getDate = getHour + "hrs " + getMinute + " min ago";
+
       div.innerHTML = `
-         <div class="card">
+         <div class="card card-compact">
+        <div style="position:relative">
         <figure><img class="w-[312px] h-[200px] rounded-lg" src="${
           categoryItem.thumbnail
         }" alt="tube" /></figure>
-        <div class="card-body flex flex-row gap-3 mt-5">
-          
+        
+          <span style="position:absolute; font-size:10px; padding:4px 0px; top:160px; right:50px; color:#FFF; background-color:#171717; border-radius:4px">${
+            categoryItem.others?.posted_date !== "" ? getDate : ""
+          }</span>
+        </div>
+        <div class="card-body flex flex-row ml-8 md:ml-3 lg:ml-0 mt-5"> 
           <div>
           <img  class="h-10 w-10 rounded-full" src="${
             categoryItem.authors[0]?.profile_picture
@@ -59,9 +69,7 @@ const allCategoryItem = async (categoryId) => {
           ? ' <img src="../images/verified.png" alt="" />'
           : " "
       }</span></p>
-          <p class="text-[#252525B2] text-sm">${
-            categoryItem.others?.views || "No Views"
-          }</p> 
+          <p class="text-[#252525B2] text-sm">${categoryItem.others?.views}</p> 
           </div> 
         </div>
       </div>
@@ -69,9 +77,7 @@ const allCategoryItem = async (categoryId) => {
       cardContainer.appendChild(div);
     });
   }
-}
-  
-  
+};
 
 allCategoryLoad();
 allCategoryItem("1000");

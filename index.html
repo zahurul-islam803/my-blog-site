@@ -1,56 +1,78 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PH Tube</title>
-  <!-- Google fonts Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-  <!-- daisyUI and tailwind link -->
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="max-w-[1440px] px-2 mx-auto" style="font-family:'Inter', sans-serif;">
-  <!-- header section starts here -->
-  <header>
-    <nav class="flex justify-around pt-12 flex-col md:flex-row gap-7 md:gap-28 lg:gap-[437px]">
-      <img src="./images/Logo.png" alt="">
-      <button onclick="sortingData()" class="font-medium text-lg text-[#252525] bg-[#25252533] py-[10px] px-5 rounded">Sort by view</button>
-      <a class=" py-[10px] px-5 bg-[#FF1F3D] rounded text-center" href="./blog/index.html" target="_blank"><button class="font-medium text-lg text-white">Blog</button></a>
-    </nav>
-    <div class="py-8 px-5 tex-[#25252533]">
-      <hr>
-    </div>
-  </header>
-  <!-- header section ends here -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PH Tube</title>
+    <!-- Google fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- daisyUI and tailwind link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="max-w-[1440px] px-2 mx-auto"
+    style="font-family: 'Inter', sans-serif"
+  >
+    <!-- header section starts here -->
+    <header>
+      <nav
+        class="flex justify-around pt-12 flex-col md:flex-row gap-7 md:gap-28 lg:gap-[437px]"
+      >
+        <img src="./images/Logo.png" alt="" />
+        <button
+          onclick="sortingData()"
+          class="font-medium text-lg text-[#252525] bg-[#25252533] py-[10px] px-5 rounded"
+        >
+          Sort by view
+        </button>
+        <a
+          class="py-[10px] px-5 bg-[#FF1F3D] rounded text-center"
+          href="./blog/index.html"
+          target="_blank"
+          ><button class="font-medium text-lg text-white">Blog</button></a
+        >
+      </nav>
+      <div class="py-8 px-5 tex-[#25252533]">
+        <hr />
+      </div>
+    </header>
+    <!-- header section ends here -->
 
-  <!-- main section starts here -->
-  <main>
-    <section id="section">
-      <!-- tab container starts here -->
-     <div class="tab-conteiner w-full">
-       <div class="tabs flex justify-center gap-5 text-center" id="tab-container">
-      
-    </div>
-     </div>
-     <!-- tab container ends here -->
+    <!-- main section starts here -->
+    <main>
+      <section>
+        <!-- tab container starts here -->
+        <div class="tab-conteiner w-full">
+          <div
+            class="tabs flex justify-center gap-5 text-center"
+            id="tab-container"
+          ></div>
+        </div>
+        <!-- tab container ends here -->
 
-     <!-- Card container starts here -->
-     <div id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
-
-     </div>
-     <!-- Empty tab -->
-     <div id="empty-tab" class="my-16 mx-auto"></div>
-     <!-- Card container ends here -->
-    </section>
-  </main>
-  <!-- main section ends here -->
-  <footer>
-
-  </footer>
-  <!-- script link -->
-<script src="./js/index.js"></script>
-</body>
+        <!-- Card container starts here -->
+        <div
+          id="card-container"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10"
+        ></div>
+        <!-- Empty tab -->
+        <div id="empty-tab" class="my-16 mx-auto"></div>
+        <!-- Card container ends here -->
+      </section>
+    </main>
+    <!-- main section ends here -->
+    <footer></footer>
+    <!-- script link -->
+    <script src="./js/index.js"></script>
+  </body>
 </html>

@@ -83,13 +83,6 @@ allCategoryItem("1000");
 
 
 
-
-
-
-
-
-
-
 // All category items
 const allCategorySortItem = async (categoryId) => {
   const cardContainer = document.getElementById("card-container");
@@ -100,11 +93,6 @@ const allCategorySortItem = async (categoryId) => {
   const data = await res.json();
   const categoryItems = data.data;
   // data sorting
-  const compareData = (a, b)=>{
-    const compareA = parseItem(a.others.views);
-    const compareB = parseItem(b.others.views);
-    return compareB - compareA;
-  } 
   const parseItem = (parseString) =>{
     const number = parseFloat(parseString);
 
@@ -112,6 +100,11 @@ const allCategorySortItem = async (categoryId) => {
       return number * 1000;
     }
   }
+   const compareData = (a, b) => {
+     const compareA = parseItem(a.others.views);
+     const compareB = parseItem(b.others.views);
+     return compareB - compareA;
+   }; 
 
   categoryItems.sort(compareData);
 

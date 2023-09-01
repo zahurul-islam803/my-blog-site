@@ -18,10 +18,17 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .border-class{
+        border: 1px solid skyblue;
+        border-radius: 8px;
+        padding: 8px;
+      }
+    </style>
   </head>
   <body
     class="max-w-[1440px] px-2 mx-auto"
-    style="font-family: 'Inter', sans-serif"
+    style="font-family: 'Inter', sans-serif;"
   >
     <!-- header section starts here -->
     <header>
@@ -36,20 +43,21 @@
           Blog
         </button>
       </nav>
-      <div class="py-8 px-8 tex-[#25252533]">
-        <hr />
-      </div>
+      
     </header>
     <!-- header section ends here -->
 
     <!-- main section starts here -->
     <main>
       <section>
-        <div>
-          <p class="font-bold text-2xl">
+        <div class="mt-11" style="background-image: url('https://www.answers.com/icons/subjectHeader.svg'); background-repeat: no-repeat; background-size: cover; height: 300px; border-radius: 8px;">
+
+        </div>
+        <div class="border-class mt-16">
+          <p class="font-bold text-2xl text-sky-400 italic">
             1. Discuss the scope of var, let, and const.
           </p>
-          <p class="pl-5 mt-3">
+          <p class="pl-5 mt-3 text-sky-600">
             In javaScript scope's var variable is a functional scope.Let and
             const are block scope variable.Var variable cannot be found when
             called from outside the function.Let and const variable cannot be
@@ -58,11 +66,11 @@
             variable.Variable declared with let or const they are'nt hoisted.
           </p>
         </div>
-        <div class="py-9">
-          <p class="font-bold text-2xl">
+        <div class="py-9 my-6 border-class">
+          <p class="font-bold text-2xl text-sky-400 italic">
             2. Tell us the use cases of null and undefined.
           </p>
-          <p class="pl-5 mt-3">
+          <p class="pl-5 mt-3 text-sky-600">
             In programming 'null' means empty value.A and undefined means
             declared variable but not assigned value.There are some use cases in
             programming sector.<br /><br />Use case of 'null' like as...
@@ -74,9 +82,9 @@
             as optional parameter.
           </p>
         </div>
-        <div>
-          <p class="font-bold text-2xl">3. What do you mean by REST API?</p>
-          <p class="pl-5 mt-3 mb-16">
+        <div class="border-class mb-16">
+          <p class="font-bold text-2xl text-sky-400 italic">3. What do you mean by REST API?</p>
+          <p class="pl-5 mt-3 mb-4 text-sky-600">
             REST API means Representational State Transfer Application
             Programming Interface.<br />Rest API's use standard HTTP method.REST
             API is used in the context of web development to enable software

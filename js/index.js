@@ -36,9 +36,9 @@ const allCategoryItem = async (categoryId) => {
     emptyTab.innerHTML = "";
     categoryItems.forEach((categoryItem) => {
       const div = document.createElement("div");
-      const getHour = Math.ceil(categoryItem.others.posted_date / 3600);
-      const getSecond = getHour * 3600 - categoryItem.others.posted_date;
-      const getMinute = Math.ceil(getSecond / 60);
+      const getHour = Math.floor(categoryItem.others.posted_date / 3600);
+      const getSecond = categoryItem.others.posted_date - getHour * 3600;
+      const getMinute = Math.floor(getSecond / 60);
       const getDate = getHour + "hrs " + getMinute + " min ago";
 
       div.innerHTML = `
@@ -81,7 +81,10 @@ const allCategoryItem = async (categoryId) => {
 allCategoryLoad();
 allCategoryItem("1000");
 
+
+// sorting section
 // All category items
+let sortedData = '';
 const allCategorySortItem = async (categoryId) => {
   const cardContainer = document.getElementById("card-container");
   const emptyTab = document.getElementById("empty-tab");
@@ -89,7 +92,7 @@ const allCategorySortItem = async (categoryId) => {
     `https://openapi.programming-hero.com/api/videos/category/${categoryId}`
   );
   const data = await res.json();
-  const categoryItems = data.data;
+  sortedData = data.data;
   // data sorting
   const parseItem = (parseString) => {
     const number = parseFloat(parseString);
@@ -104,10 +107,10 @@ const allCategorySortItem = async (categoryId) => {
     return compareB - compareA;
   };
 
-  categoryItems.sort(compareData);
+  sortedData.sort(compareData);
 
   cardContainer.innerHTML = "";
-  if (categoryItems.length === 0) {
+  if (sortedData.length === 0) {
     emptyTab.innerHTML = `
       <div class="grid text-center gap-8 justify-items-center content-center">
       <img src="../images/icon.png" alt="icon" />
@@ -116,11 +119,11 @@ const allCategorySortItem = async (categoryId) => {
     `;
   } else {
     emptyTab.innerHTML = "";
-    categoryItems.forEach((categoryItem) => {
+    sortedData.forEach((categoryItem) => {
       const div = document.createElement("div");
-      const getHour = Math.ceil(categoryItem.others.posted_date / 3600);
-      const getSecond = getHour * 3600 - categoryItem.others.posted_date;
-      const getMinute = Math.ceil(getSecond / 60);
+      const getHour = Math.floor(categoryItem.others.posted_date / 3600);
+      const getSecond = categoryItem.others.posted_date - getHour * 3600;
+      const getMinute = Math.floor(getSecond / 60);
       const getDate = getHour + "hrs " + getMinute + " min ago";
 
       div.innerHTML = `
@@ -161,5 +164,5 @@ const allCategorySortItem = async (categoryId) => {
 };
 
 const sortingData = () => {
-  allCategorySortItem("1000");
+  allCategorySortItem('1000');
 };
